@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,7 +20,9 @@ public class Principal extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String anno = input_anno.getText();
-                msgResultado(anno);
+
+                // Da el resultado en el MSG box
+                msgResultado(gestorMsgCalculoBisiesto(anno));
             }
         });
     }
@@ -30,7 +31,31 @@ public class Principal extends JFrame{
       Principal myFramme = new Principal();
     }
 
-    private void msgResultado(String anno){
-        JOptionPane.showMessageDialog(this,"El año es:"+ anno);
+    private void msgResultado(String msgCalculo){
+        JOptionPane.showMessageDialog(this, msgCalculo);
+    }
+
+    private boolean calcularBisiesto(String anno){
+
+        int num_anno=Integer.parseInt(anno);
+
+        if (num_anno % 4 == 0 && num_anno % 100 != 0 || num_anno % 400 == 0) {
+           return true;
+        } else {
+            return false;
+        }
+    }
+
+    private String gestorMsgCalculoBisiesto(String anno){
+
+
+        Boolean biciesto = calcularBisiesto(anno);
+
+        if (biciesto == true){
+            return "El año: " + anno + " SI es bisiesto.";
+        }else{
+            return "El año: " + anno + " NO es bisiesto.";
+        }
+
     }
 }
