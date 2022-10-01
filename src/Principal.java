@@ -21,11 +21,16 @@ public class Principal extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String anno = input_anno.getText();
+                msgResultado(anno);
             }
         });
     }
 
     public static void main(String[] args) {
       Principal myFramme = new Principal();
+    }
+
+    private void msgResultado(String anno){
+        JOptionPane.showMessageDialog(this,"El año es:"+ anno);
     }
 }
