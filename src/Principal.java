@@ -31,6 +31,7 @@ public class Principal extends JFrame{
                 }
 
             }
+
         });
 
     }
@@ -40,11 +41,22 @@ public class Principal extends JFrame{
     }
 
     private void msgResultado(String msgCalculo){
-        JOptionPane.showMessageDialog(this, msgCalculo);
+         JOptionPane.showMessageDialog(this, msgCalculo);
+
+
+        int result = JOptionPane.showConfirmDialog(null,
+                "¿Desea continuar?",null, JOptionPane.YES_NO_OPTION);
+        if(result == JOptionPane.NO_OPTION) {
+            System.exit(0);
+        }
+
+      
+
     }
 
     private void msgError(String texto){
         JOptionPane.showMessageDialog(this, "El texto: " + texto + "  NO es un número valido.");
+
     }
 
     private boolean calcularBisiesto(String anno){
