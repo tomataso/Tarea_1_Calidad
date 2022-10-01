@@ -23,7 +23,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Aquí va un número de año."/>
+          <text value=""/>
         </properties>
       </component>
       <component id="5f209" class="javax.swing.JButton" binding="btn_Calcular">

@@ -25,6 +25,7 @@ public class Principal extends JFrame{
                 msgResultado(gestorMsgCalculoBisiesto(anno));
             }
         });
+
     }
 
     public static void main(String[] args) {
