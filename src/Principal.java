@@ -21,8 +21,15 @@ public class Principal extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String anno = input_anno.getText();
 
-                // Da el resultado en el MSG box
-                msgResultado(gestorMsgCalculoBisiesto(anno));
+
+
+                if (inputValido(anno) == true){
+                    // Da el resultado en el MSG box
+                    msgResultado(gestorMsgCalculoBisiesto(anno));
+                }else{
+                    msgError(anno);
+                }
+
             }
         });
 
@@ -34,6 +41,10 @@ public class Principal extends JFrame{
 
     private void msgResultado(String msgCalculo){
         JOptionPane.showMessageDialog(this, msgCalculo);
+    }
+
+    private void msgError(String texto){
+        JOptionPane.showMessageDialog(this, "El texto: " + texto + "  NO es un número valido.");
     }
 
     private boolean calcularBisiesto(String anno){
@@ -53,10 +64,26 @@ public class Principal extends JFrame{
         Boolean biciesto = calcularBisiesto(anno);
 
         if (biciesto == true){
-            return "El año: " + anno + " SI es bisiesto.";
+            return "El año: " + anno + ". SI es bisiesto.";
         }else{
-            return "El año: " + anno + " NO es bisiesto.";
+            return "El año: " + anno + ". NO es bisiesto.";
         }
 
+    }
+
+    private boolean inputValido (String anno){
+
+        String input = anno;
+        try
+        {
+            Integer.parseInt(input);
+            System.out.println(input + " Si es un número entero.");
+            return true;
+        }
+        catch (NumberFormatException e)
+        {
+            System.out.println(input + " No es un número entero.");
+            return false;
+        }
     }
 }
