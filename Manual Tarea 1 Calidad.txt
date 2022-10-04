@@ -1,0 +1,15 @@
+Repositorio Con el programa Github: https://github.com/tomataso/Tarea_1_Calidad
+
+Manual de Usuario:
+
+1. El ejecutable se puede correr por separado, o se puede compilar directamente desde el Código.
+2. Una vez compilado darle clic a "Tarea_1_Calidad.jar"
+3. Una vez ejecutado, aparecerá el panel principal, con un input y un botón de "Calcular"
+4. Ingrese el dato que dese, y prosiga dando al botón de aceptar.
+5. Si el dato es incorrecto vera el mensaje de error informándoselo.
+6. Si el dato es correcto, se mostrar el resultado del cálculo. Dele aceptar una vez vea el resultado.
+7. Le aparecerá una venta preguntándole "¿Desea continuar?" si su respuesta es sí, lo llevara al menú principal, si "Yes" su respuesta es "No" saldrá del programa.
+
+PD: También se puede salir del programa a través de la X en la esquina superior derecha, en el menú principal.
+
+Nota: El ejecutable se encuentra en la carpeta "Ejecutables" dentro del mismo proyecto.
